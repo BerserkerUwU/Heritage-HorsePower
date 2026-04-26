@@ -1,17 +1,17 @@
 /* Declaracion de variables globales EJ: Colores, fuentes, etc... */
-:root{
+:root {
     /* Colores principales */
     --color-principal: #111111;
-    --color-superf-tarjetas:#9b9b9b ;
+    --color-superf-tarjetas: #9b9b9b;
 
     /* Colores de botones e iconos */
     --color-efectos: #C1121F;
-    --color-bordes: #C9A227;
+    --color-bordes: rgba(252, 230, 110, 0.863);
     --color-enlaces-y-hovers: #1E5EFF;
 
     /* Colores de textos y titulos */
     --color-textos-titulos: #F5F5F5;
-    --color-palabras-clave: #C9A227;
+    --color-palabras-clave: rgba(250, 214, 95, 0.863);
     --color-texto-secundario: rgba(245, 245, 245, 0.7);
 }
 
@@ -19,22 +19,31 @@
 /* Estoy estudiando como funciona c: */
 /* Adaptación optimizada para móvil, posición vertical y horizontal */
 @media(min-width: 768px) {
-    #contenedor{
-    }
+    #contenedor {}
+    #cont-principal {}
 }
 
 /* Adaptación optimizada para tablet, posición vertical y horizontal */
 @media(min-width: 768px) {
-    #contenedor{
-    }
+    #contenedor {}
+    #cont-principal{}
 }
 
 /* Adaptación de ancho fijo de resoluciones de más de 1300px de ancho */
 @media (min-width: 1300px) {
     #contenedor {
-        width: 1200px; 
+        width: 1300px;
         margin: 0 auto;
     }
+    #cont-principal .coche-fondo{
+        width: 1300px;
+        margin: 0 auto;
+    }
+}
+
+@font-face {
+    font-family: "elegante";
+    src: url(../fonts/jhc_audemars/JHCAudemars-Medium.otf);
 }
 
 /* Ajuste global */
@@ -47,61 +56,118 @@ body {
     background-color: var(--color-principal);
 }
 
-#contenedor {
-
-}
-
 /* Ajuste de la cabercera*/
 .cabecera {
-    display: flex;             
-    justify-content: space-between; 
-    align-items: center;       
-    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 30px;
     color: white;
+    position: relative;
+    z-index: 100;
 }
 
-.cabecera .logo{
+.cabecera .logo {
     width: 150px;
     height: 100px;
     display: block;
 }
 
-/* Ajuste del menu desplegable */
-.cabecera .menu ul {
+.nombre-logo {
+    font-family: "elegante";
+    font-size: 25px;
+    display: flex;
+    margin-left: -145px;
+    color: var(--color-palabras-clave);
+}
+
+/* Ajustes menú principal (Horizontal) */
+.cabecera .menu>ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-.cabecera .menu ul li a {
+.cabecera .menu li {
+    position: relative;
+}
+
+.cabecera .menu li>a:hover {
+    color: var(--color-palabras-clave);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+
+.cabecera .menu a {
+    display: block;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
-    margin: 20px;
+    padding: 20px;
+}
+
+/* Ajuste del submenú (Oculto y posicionado) */
+.cabecera .menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    background-color: rgba(2, 2, 2, 0.5);
+    border-radius: 5px;
+    padding: 0;
+    list-style: none;
+    z-index: 101;
+}
+
+.cabecera .menu li:hover>ul {
+    display: block;
+}
+
+
+.cabecera .menu ul ul a:hover {
+    color: var(--color-palabras-clave);
+    text-align: center;
 }
 
 /* Ajustes del contenedor de iconos */
 .iconos {
-    display: flex;            
+    display: flex;
     align-items: center;
+    transition: transform 0.3s ease;
 }
 
 .iconos a {
     color: white;
-    font-size: 24px;          
+    font-size: 24px;
     display: flex;
     margin: 15px;
 }
 
-/* Ajustes del contenido principal */
-.principal {
-    width: 100%;
-}
-.principal img {
-    width: 100%;
-    height: 100vh;
+.iconos a:hover {
+    color: var(--color-palabras-clave);
+    transform: translateY(-5px);
 }
 
+/* Ajustes del contenido principal */
+#cont-principal {
+    width: 100%;
+    display: block;
+}
+
+.coche-fondo {
+    width: 100%;
+    display: block;
+}
+
+body footer {
+    text-align: center;
+    padding: 15px;
+    color: var(--color-textos-titulos);
+    font-family: "elegante";
+    font-size: 20px;
+    background-attachment: fixed;
+} 
