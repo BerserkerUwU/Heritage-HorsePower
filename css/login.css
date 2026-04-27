@@ -1,0 +1,149 @@
+/* Declaracion de variables globales EJ: Colores, fuentes, etc... */
+:root {
+  /* Colores principales */
+  --color-principal: #111111;
+  --color-superf-tarjetas: #9b9b9b;
+
+  /* Colores de botones e iconos */
+  --color-efectos: #c1121f;
+  --color-bordes: rgba(252, 230, 110, 0.863);
+  --color-enlaces-y-hovers: #1e5eff;
+
+  /* Colores de textos y titulos */
+  --color-textos-titulos: #f5f5f5;
+  --color-palabras-clave: rgba(250, 214, 95, 0.863);
+  --color-texto-secundario: rgba(245, 245, 245, 0.7);
+}
+
+@font-face {
+  font-family: "carrera";
+  src: url(../fonts/LEMONMILK-Regular.otf);
+}
+
+.body1 {
+    background-image: url(../img/fondo1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "carrera";
+}
+
+.cabecera {
+    background-color: var(--color-principal);
+}
+
+/*Estructura dentro divs*/
+/* Caja principal */
+.Caja {
+    width: 900px;
+    height: 500px;
+    background: rgb(48, 45, 45);
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 0 35px rgba(196, 194, 189, 0.582); /*Para hacer la caja brillante*/ 
+    border: 1px solid #000000;
+}
+
+/* Lado izquierdo */
+.Izquierda {
+    width: 270px; /* 30% de 900px */
+    height: 500px;
+    background: #dbd9d9;
+    float: left;
+    text-align: center;
+    padding-top: 30px;
+    font-family: "carrera";
+}
+
+.Icono {
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Icono img{
+    width: 90px;
+    height: 90px;
+}
+
+.Izquierda input {
+    width: 180px;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.Izquierda button {
+    width: 200px;
+    height: 40px;
+    background: #000000;
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.Izquierda button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.Izquierda button:hover {
+    background-color: #ebb645;
+}
+
+.Links {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.Links a{
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Lado derecho */
+.Derecha {
+    width: 630px;
+    height: 500px;
+    float: left;
+    position: relative;
+}
+
+/* Video */
+.Video {
+    position: absolute;
+    width: 630px;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Texto encima De El Video*/
+.TextoEncima {
+    position: absolute;
+    top: 350px;
+    left: 80px;
+    color: white;
+}
+
+.TextoEncima h1 {
+    font-size: 40px;
+    margin: 0;
+    font-family: "carrera";
+}
+
+.TextoEncima p {
+    font-size: 14px;
+    font-family: "carrera";
+}
